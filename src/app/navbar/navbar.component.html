@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navLogo">
+    <i class="fa-solid fa-video"></i>
+    <h4>Watch<span>M</span>ax</h4>
+  </div>
+  <div class="navSearch">
+    <button (click)="goHome()">Home</button>
+    <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="onSearch()"
+    placeholder="Search movies..."
+    >
+  </div>
+
+</nav>

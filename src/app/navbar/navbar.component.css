@@ -1,0 +1,51 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+.navLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.navLogo span{
+    color: #f39c12;
+}
+.navLogo .fa-video{
+    font-size: 20px;
+    color: #f39c12;
+}
+.navSearch{
+    display: flex;
+    gap: 2%;
+    padding-right: 2%;
+}
+.navSearch button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #f39c12;
+}
+.navSearch button:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.navSearch input{
+    height: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+}
+.navSearch input::placeholder{
+    text-align: center;
+}
+.navSearch input:focus{
+    border-color: #f39c12;
+    outline: none;
+}

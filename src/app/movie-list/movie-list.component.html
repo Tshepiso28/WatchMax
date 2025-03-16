@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+<div class="movie-grid">
+  @for (movie of movies; track movie.id) {
+    <a [routerLink]="['/movie', movie.id]" class="movie-link">
+      <div class="movie-card">
+        @if (movie.poster_path) {
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+            [alt]="movie.title + ' poster'"
+            class="poster"
+          >
+        } @else {
+          <div class="no-poster">No poster available</div>
+        }
+        <h4>{{ movie.title }}</h4>
+        @if (movie.release_date) {
+          <p>{{ movie.release_date | date: 'yyyy' }}</p>
+        }
+      </div>
+    </a>
+  }
+</div>

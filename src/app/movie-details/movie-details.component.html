@@ -1,0 +1,30 @@
+@if (isLoading) {
+    <p>Loading movie details...</p>
+  } @else if (movie) {
+    <div class="movie-details">
+      @if (movie.poster_path) {
+        <img 
+          [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+          [alt]="movie.title"
+          class="poster"
+        >
+      }
+      <div class="info">
+        <h1>{{ movie.title }}</h1>
+        <p class="release-date">
+          {{ movie.release_date | date: 'yyyy' }} • 
+          {{ movie.runtime }} minutes
+        </p>
+        <div class="genres">
+          @for (genre of movie.genres; track genre.id) {
+            <span class="genre-tag">{{ genre.name }}</span>
+          }
+        </div>
+        <p class="rating">⭐ {{ movie.vote_average }}/10</p>
+        <h3>Overview</h3>
+        <p class="overview">{{ movie.overview }}</p>
+      </div>
+    </div>
+  } @else {
+    <p>Movie not found!</p>
+  }
