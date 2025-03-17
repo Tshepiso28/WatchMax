@@ -20,19 +20,19 @@ export class NavbarComponent {
     if (this.searchQuery.trim()) {
       this.movieService.searchMovies(this.searchQuery.trim()).subscribe({
         next: (response) => {
-          this.movieService.setMovies(response.results); // Store search results in service
+          this.movieService.setMovies(response.results); 
         },
         error: (err) => {
           console.error('Search error:', err);
-          this.movieService.setMovies([]); // Clear results if search fails
+          this.movieService.setMovies([]); 
         }
       });
     } else {
-      this.movieService.loadPopularMovies(); // Reload popular movies
+      this.movieService.loadPopularMovies(); 
     }
   }
   goHome() {
-    this.router.navigate(['/']); // Navigate back to the movie list page
-    this.movieService.loadPopularMovies(); // Reload popular movies
+    this.router.navigate(['/']); 
+    this.movieService.loadPopularMovies(); 
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService, MovieDetails } from '../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DecimalPipe } from '@angular/common'; // For rating formatting
+import { DecimalPipe } from '@angular/common'; 
 
 @Component({
   standalone: true,

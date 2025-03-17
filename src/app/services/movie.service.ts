@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
 
-// Define Movie interface
 export interface Movie {
   id: number;
   title: string;
@@ -11,7 +10,6 @@ export interface Movie {
   release_date: string;
 }
 
-// Define MovieDetails interface
 export interface MovieDetails {
   id: number;
   title: string;
@@ -32,14 +30,12 @@ export class MovieService {
   private baseUrl = 'https://api.themoviedb.org/3';
 
   private moviesSubject = new BehaviorSubject<Movie[]>([]);
-  movies$ = this.moviesSubject.asObservable(); // Allows components to subscribe
+  movies$ = this.moviesSubject.asObservable(); 
 
-  // Set movies from search results
   setMovies(movies: Movie[]) {
     this.moviesSubject.next(movies);
   }
 
-  // Get popular movies
   loadPopularMovies() {
     this.http.get<{ results: Movie[] }>(
       `${this.baseUrl}/movie/popular?api_key=${this.apiKey}`
@@ -52,14 +48,12 @@ export class MovieService {
     });
   }
 
-  // Search movies
   searchMovies(query: string) {
     return this.http.get<{ results: Movie[] }>(
       `${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
     );
   }
 
-  // Get movie details
   getMovieDetails(id: number) {
     const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`;
     console.log('API URL:', url);

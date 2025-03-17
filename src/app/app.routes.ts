@@ -4,5 +4,5 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 
 export const routes: Routes = [ { path: '', component: MovieListComponent },
     { path: 'movie/:id', component: MovieDetailsComponent },
-    { path: '', redirectTo: '/', pathMatch: 'full' } // Redirect home to movies
+    { path: '', redirectTo: '/', pathMatch: 'full' } 
 ];
